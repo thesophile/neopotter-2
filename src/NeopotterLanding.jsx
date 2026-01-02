@@ -33,9 +33,26 @@ export default function NeopotterLanding() {
         <div>
           <h2 className="text-4xl font-semibold mb-4">Built for Engineers</h2>
           <p className="text-gray-400 leading-relaxed">
-            Functional parts. Tight tolerances. No gimmicks.
+            Functional parts. Tight tolerances. No gimmicks. <br></br>
             We design and manufacture components that actually work in the real world.
           </p>
+
+          <ul className="text-gray-400 leading-relaxed space-y-2 pt-6">
+            <li>• Materials: PLA, PETG, TPU, ABS</li>
+            <li>• Typical tolerance: ±0.2 mm (design dependent)</li>
+            <li>• Layer heights: 0.2–0.28 mm</li>
+            <li>• Build volume: up to 220 × 220 × 250 mm</li>
+            <li>• Optimized infill, walls, and orientation</li>
+          </ul>
+
+          <p className="pt-16 text-lg text-white font-medium">
+            Pricing starts from <span className="text-green-400">₹150</span>
+          </p>
+
+          <p className="text-sm text-gray-500 mt-1">
+            Final price depends on size, material, and print time.
+          </p>
+
         </div>
         <section className="h-screen" title="3d Printable Radial Pneumatic Engine (https://skfb.ly/6QZpx) by Slava Z. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).">
           <Canvas camera={{ position: [5, 3, 5], fov: 50 }}>
@@ -57,24 +74,51 @@ export default function NeopotterLanding() {
 
       {/* Capabilities */}
       <section className="py-32 px-10 bg-gradient-to-b from-black to-gray-900">
-        <h2 className="text-4xl font-semibold mb-12 text-center">Capabilities</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {["Prototyping", "Low-volume Manufacturing", "Custom Engineering Parts"].map(
-            (item) => (
-              <motion.div
-                key={item}
-                whileHover={{ scale: 1.05 }}
-                className="p-8 border border-gray-700 rounded-2xl bg-black"
-              >
-                <h3 className="text-xl font-medium mb-2">{item}</h3>
-                <p className="text-gray-400 text-sm">
-                  Designed for accuracy, repeatability, and mechanical reliability.
-                </p>
-              </motion.div>
-            )
-          )}
+        <h2 className="text-4xl font-semibold mb-16 text-center">
+          How It Works
+        </h2>
+
+        <div className="max-w-4xl mx-auto grid md:grid-cols-4 gap-8">
+          {[
+            {
+              step: "01",
+              title: "Send Your Design",
+              desc: "Share your STL or STEP file via WhatsApp or call."
+            },
+            {
+              step: "02",
+              title: "Review & Quote",
+              desc: "We check printability, material, and confirm cost."
+            },
+            {
+              step: "03",
+              title: "Print & Inspect",
+              desc: "Printed with correct orientation and checked for defects."
+            },
+            {
+              step: "04",
+              title: "Deliver",
+              desc: "Delivered locally or shipped, ready to use."
+            }
+          ].map((item) => (
+            <div
+              key={item.step}
+              className="p-6 border border-gray-700 rounded-2xl bg-black"
+            >
+              <div className="text-gray-500 text-sm mb-2">
+                {item.step}
+              </div>
+              <h3 className="text-xl font-medium mb-2">
+                {item.title}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
+
 
       <section className="py-24 px-6 bg-black text-center">
         <h2 className="text-4xl md:text-5xl font-semibold mb-6">
@@ -125,7 +169,7 @@ export default function NeopotterLanding() {
             Terms & Services
           </a>.
         </p>
-          
+
       </section>
 
 
