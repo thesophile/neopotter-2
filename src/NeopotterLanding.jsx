@@ -37,7 +37,7 @@ export default function NeopotterLanding() {
             We design and manufacture components that actually work in the real world.
           </p>
         </div>
-        <section className="h-screen" title = "3d Printable Radial Pneumatic Engine (https://skfb.ly/6QZpx) by Slava Z. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).">
+        <section className="h-screen" title="3d Printable Radial Pneumatic Engine (https://skfb.ly/6QZpx) by Slava Z. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).">
           <Canvas camera={{ position: [5, 3, 5], fov: 50 }}>
             <ambientLight intensity={0.6} />
             <directionalLight position={[5, 5, 5]} />
@@ -82,29 +82,52 @@ export default function NeopotterLanding() {
         </h2>
 
         <p className="text-gray-400 max-w-xl mx-auto mb-10">
-          Call us or message on WhatsApp with your requirement.
+          Call us, WhatsApp us, or just get a quick quotation.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {/* Call Button */}
-          <a
-            href="tel:+919778303038"
-            className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-black font-medium hover:bg-gray-200 transition"
-          >
-            📞 Call Now
-          </a>
+        <div className="max-w-xl mx-auto">
+          {/* Top buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+            <a
+              href="tel:+919778303038"
+              className="flex-1 flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-black font-medium hover:bg-gray-200 transition"
+            >
+              📞 Call Now
+            </a>
 
-          {/* WhatsApp Button */}
+            <a
+              href="https://wa.me/919778303038"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-green-500 text-black font-medium hover:bg-green-400 transition"
+            >
+              💬 WhatsApp
+            </a>
+          </div>
+
+          {/* Quotation button */}
           <a
-            href="https://wa.me/919778303038"
+            href="https://wa.me/919778303038?text=Hi,%20I’d%20like%20a%20quotation%20for%203D%20printing."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-green-500 text-black font-medium hover:bg-green-400 transition"
+            className="block w-full px-8 py-4 rounded-xl border border-gray-600 text-white font-medium hover:bg-gray-900 transition"
           >
-            💬 WhatsApp
+            Get Free Quotation
           </a>
         </div>
+
+        <p className="mt-4 text-sm text-gray-500">
+          By contacting us, you agree to our{" "}
+          <a
+            href="/terms"
+            className="underline hover:text-gray-300 transition"
+          >
+            Terms & Services
+          </a>.
+        </p>
+          
       </section>
+
 
 
 
