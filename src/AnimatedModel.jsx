@@ -4,7 +4,7 @@ import { useGLTF, useAnimations } from "@react-three/drei"
 
 export default function AnimatedModel() {
   const ref = useRef()
-  const { scene, animations } = useGLTF("/models/3d.glb")
+  const { scene, animations } = useGLTF(`${import.meta.env.BASE_URL}models/3d.glb`)
   const { actions } = useAnimations(animations, ref)
 
   useEffect(() => {
