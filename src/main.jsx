@@ -6,8 +6,17 @@ import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/neopotter-2">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>
 );
+
+
+// createRoot(document.getElementById("root")).render(
+//   <StrictMode>
+//     <BrowserRouter basename="/neopotter-2">
+//       <App />
+//     </BrowserRouter>
+//   </StrictMode>
+// );
