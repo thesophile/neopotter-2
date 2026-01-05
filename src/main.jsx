@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>
 );
 
-
+//For hosting in Github pages domain ie thesophile.github.io 
 // createRoot(document.getElementById("root")).render(
 //   <StrictMode>
 //     <BrowserRouter basename="/neopotter-2">
