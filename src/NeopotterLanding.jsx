@@ -2,8 +2,37 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Box } from "@react-three/drei";
 import { useRef, useEffect } from "react"
+import { useState } from "react"
 import { useGLTF, useAnimations } from "@react-three/drei"
 import AnimatedModel from "./AnimatedModel"
+
+
+//3d Scene Component
+function Scene() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+  }, [])
+
+  return (
+    <Canvas
+      style={{ pointerEvents: isMobile ? "none" : "auto" }}
+      camera={{ position: [5, 3, 5], fov: 50 }}>
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[5, 5, 5]} />
+
+      <AnimatedModel />
+
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={!isMobile}
+      />
+    </Canvas>
+  )
+}
+
 
 export default function NeopotterLanding() {
   const { scrollYProgress } = useScroll();
@@ -55,18 +84,7 @@ export default function NeopotterLanding() {
 
         </div>
         <section className="h-screen" title="3d Printable Radial Pneumatic Engine (https://skfb.ly/6QZpx) by Slava Z. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).">
-          <Canvas camera={{ position: [5, 3, 5], fov: 50 }}>
-            <ambientLight intensity={0.6} />
-            <directionalLight position={[5, 5, 5]} />
-
-            <AnimatedModel />
-
-            <OrbitControls
-              enableZoom={true}
-              enablePan={false}
-              autoRotate={false}
-            />
-          </Canvas>
+          <Scene />
         </section>
       </section>
 
