@@ -37,7 +37,7 @@ function Scene() {
 
 export default function NeopotterLanding() {
   const { scrollYProgress } = useScroll();
-  const yText = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const yText = useTransform(scrollYProgress, [0, 1], [0, -800]);
 
   return (
     <div className="bg-black text-white min-h-screen overflow-x-hidden">
@@ -91,52 +91,67 @@ export default function NeopotterLanding() {
 
 
 
-      {/* Capabilities */}
-      <section className="py-5 px-10 bg-gradient-to-b from-black to-gray-900">
-        <h2 className="text-4xl font-semibold mb-16 text-center">
-          How It Works
-        </h2>
+      {/* workflow */}
+      <section className="relative h-screen px-6 md:px-10 bg-black overflow-hidden">
+        {/* background glow */}
+        <div className="pointer-events-none absolute inset-0">
+          <div
+            className="absolute left-1/2 top-1/2
+               -translate-x-1/2 -translate-y-1/2
+               w-[1400px] h-[800px]
+               bg-cyan-500/20
+               blur-3xl rounded-full"
+          />
+        </div>
+        {/* content */}
+        <div className="relative h-full flex flex-col justify-center">
+          <h2 className="text-4xl font-semibold mb-12 text-center tracking-tight">
+            How It Works
+          </h2>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-4 gap-8">
-          {[
-            {
-              step: "01",
-              title: "Send Your Design",
-              desc: "Share your STL or STEP file via WhatsApp or call."
-            },
-            {
-              step: "02",
-              title: "Review & Quote",
-              desc: "We check printability, material, and confirm cost."
-            },
-            {
-              step: "03",
-              title: "Print & Inspect",
-              desc: "Printed with correct orientation and checked for defects."
-            },
-            {
-              step: "04",
-              title: "Deliver",
-              desc: "Delivered locally or shipped, ready to use."
-            }
-          ].map((item) => (
-            <div
-              key={item.step}
-              className="p-6 border border-gray-700 rounded-2xl bg-black"
-            >
-              <div className="text-gray-500 text-sm mb-2">
-                {item.step}
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Send Your Design",
+                desc: "Share your STL or STEP file via WhatsApp or mail."
+              },
+              {
+                step: "02",
+                title: "Review & Quote",
+                desc: "We check printability, material, and confirm cost."
+              },
+              {
+                step: "03",
+                title: "Print & Inspect",
+                desc: "Printed with correct orientation and checked for defects."
+              },
+              {
+                step: "04",
+                title: "Deliver",
+                desc: "Delivered locally or shipped, ready to use."
+              }
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur
+                     hover:border-cyan-400/40 transition"
+              >
+                <div className="text-xs text-cyan-400 mb-2 tracking-widest">
+                  {item.step}
+                </div>
+                <h3 className="text-lg font-medium mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="text-xl font-medium mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
+
 
 
       <section className="py-24 px-6 bg-black text-center">
