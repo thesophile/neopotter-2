@@ -17,6 +17,7 @@ function Scene() {
 
   return (
     <Canvas
+      // class="w-full h-full"
       style={{ pointerEvents: isMobile ? "none" : "auto" }}
       camera={{ position: [5, 3, 5], fov: 50 }}>
       <ambientLight intensity={0.6} />
@@ -58,8 +59,8 @@ export default function NeopotterLanding() {
       </section>
 
       {/* 3D Section */}
-      <section className="h-screen grid md:grid-cols-2 gap-8 px-10 items-center">
-        <div>
+      <section className="min-h-screen md:grid md:grid-cols-[1fr_3fr] gap-8 md:px-0 items-center">
+        <div class="px-6 md:px-10">
           <h2 className="text-4xl font-semibold mb-4">Built for Engineers</h2>
           <p className="text-gray-400 leading-relaxed">
             Functional parts. Tight tolerances. No gimmicks. <br></br>
@@ -83,7 +84,7 @@ export default function NeopotterLanding() {
           </p>
 
         </div>
-        <section className="h-screen" title="3d Printable Radial Pneumatic Engine (https://skfb.ly/6QZpx) by Slava Z. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).">
+        <section className="w-full h-[100vh] md:h-full py-6" title="3d Printable Radial Pneumatic Engine (https://skfb.ly/6QZpx) by Slava Z. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).">
           <Scene />
         </section>
       </section>
@@ -91,7 +92,7 @@ export default function NeopotterLanding() {
 
 
       {/* Capabilities */}
-      <section className="py-32 px-10 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-5 px-10 bg-gradient-to-b from-black to-gray-900">
         <h2 className="text-4xl font-semibold mb-16 text-center">
           How It Works
         </h2>
