@@ -195,9 +195,9 @@ export default function NeopotterLanding() {
         </div>
 
         <p className="mt-4 text-sm text-gray-500">
-          By contacting us, you agree to our{" "}
+          By proceeding, you agree to our{" "}
           <a
-            href="/terms"
+            href="/#/terms"
             className="underline hover:text-gray-300 transition"
           >
             Terms & Services
